@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Side by Side`,
     author: `Mario Sánchez García`,
-    description: `Starting a new blog at 3am. What could go wrong?`,
+    description: `A blog started at 3am on a weekday. What could go wrong?`,
     siteUrl: `https://nifty-allen-9641e5.netlify.com/`,
     social: {
       twitter: `mhsangar`,

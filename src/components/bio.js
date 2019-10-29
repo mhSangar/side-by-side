@@ -26,6 +26,8 @@ const Bio = () => {
           author
           social {
             twitter
+            github
+            dev
           }
         }
       }
@@ -69,13 +71,13 @@ const Bio = () => {
 
           ,{` `} 
 
-          <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${social.twitter}`}>
+          <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${social.github}`}>
             GitHub
           </a> 
           
           {` `}and{` `} 
 
-          <a target="_blank" rel="noopener noreferrer" href={`https://dev.to/${social.twitter}`}>
+          <a target="_blank" rel="noopener noreferrer" href={`https://dev.to/${social.dev}`}>
             DEV
           </a> 
           !
