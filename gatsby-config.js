@@ -3,7 +3,7 @@ module.exports = {
     title: `Side by Side`,
     author: `Mario Sánchez García`,
     description: `Starting a new blog at 3am. What could go wrong?`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://nifty-allen-9641e5.netlify.com/`,
     social: {
       twitter: `mhsangar`,
       dev: `mhsangar`
