@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://nifty-allen-9641e5.netlify.com/`,
     social: {
       twitter: `mhsangar`,
+      github: `mhsangar`,
       dev: `mhsangar`
     },
   },
