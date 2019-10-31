@@ -2,6 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import twitterLogo from "../assets/twitter-logo.png"
+import githubLogo from "../assets/github-logo.png"
+import devLogo from "../assets/dev-logo.png"
 
 class Layout extends React.Component {
   render() {
@@ -46,7 +49,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            &#8882; {title}
           </Link>
         </h3>
       )
@@ -63,9 +66,66 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          Side by Side © {new Date().getFullYear()}
+          <div style={{ float: 'right', display: 'flex', flexDirection: 'row' }}>
+            <a
+              style={{ 
+                boxShadow: 'none', 
+                marginRight: '.5rem', 
+                height: '24px', 
+                display: 'block' 
+              }}
+              href="https://mobile.twitter.com/mhSangar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={twitterLogo}
+                width="24"
+                height="24"
+                role="presentation"
+                style={{ pointerEvents: 'none', margin: '0' }}
+              />
+            </a>
+            <a
+              style={{ 
+                boxShadow: 'none', 
+                marginRight: '.5rem', 
+                height: '24px', 
+                display: 'block' 
+              }}
+              href="https://github.com/mhSangar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={githubLogo}
+                width="24"
+                height="24"
+                role="presentation"
+                style={{ pointerEvents: 'none', margin: '0' }}
+              />
+            </a>
+            <a
+              style={{ 
+                boxShadow: 'none', 
+                // marginRight: '.5rem', 
+                height: '24px', 
+                display: 'block' 
+              }}
+              href="https://dev.to/mhSangar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={devLogo}
+                width="24"
+                height="24"
+                role="presentation"
+                style={{ pointerEvents: 'none', margin: '0' }}
+              />
+            </a>
+          </div>
         </footer>
       </div>
     )
