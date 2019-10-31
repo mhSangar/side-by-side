@@ -14,6 +14,6 @@ a meta-post of how this blog has been created could be a nice start.
 Not much more to say right now, I just hope you enjoy your stay and, please,
 feel like in your home! 
 
-See you around, Juanito! 
+See you around! 
 
 ![Mario (author)](../../assets/profile-pic.jpg)
