@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
-import twitterLogo from "../assets/twitter-logo.png"
-import githubLogo from "../assets/github-logo.png"
-import devLogo from "../assets/dev-logo.png"
+import twitterLogo from "../assets/color-theme/twitter-logo.png"
+import githubLogo from "../assets/color-theme/github-logo.png"
+import devLogo from "../assets/color-theme/dev-logo.png"
 
 class Layout extends React.Component {
   render() {
