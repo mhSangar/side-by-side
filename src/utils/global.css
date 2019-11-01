@@ -1,0 +1,28 @@
+body {
+    --orange: #df8a49;
+    background-color: var(--bg);
+}
+  
+body.light {
+    --bg: white;
+    --header: white;
+    --textNormal: #222;
+    --textTitle: #222;
+    --textLink: var(--orange);
+    --hr: rgba(0, 0%, 0%, 20%);
+    --inlineCode-bg: rgba(255, 229, 100, 20%);
+    --inlineCode-text: #1a1a1a; 
+}
+
+body.dark {
+    -webkit-font-smoothing: antialiased;
+
+    --bg: darkslategray;
+    --textNormal: rgba(255, 255, 255, 80%);
+    --textTitle: white;
+    --textLink: var(--orange);
+    --hr: rgba(0, 0%, 100%, 20%);
+    --inlineCode-bg: rgba(55, 60, 73, 100%);
+    --inlineCode-text: #e6e6e6;    
+}
+
