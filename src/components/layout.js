@@ -1,7 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import { FaTwitter, FaGithub, FaDev } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaDev, FaRegSun, FaRegMoon } from 'react-icons/fa';
+import { TiChevronLeftOutline } from 'react-icons/ti';
+import Switch from "react-switch";
+
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -10,7 +13,7 @@ class Layout extends React.Component {
   renderHeader() {
     const { location, title } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
-
+    
     if (location.pathname === rootPath) {
       return (
         <h1
@@ -48,7 +51,13 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            &#x2039; {title}
+            <TiChevronLeftOutline 
+              style={{
+                color: `var(--mustard)`,
+                fontSize: `.7em`,
+              }}
+            />
+            {` `} {title} 
           </Link>
         </h3>
       )
@@ -56,7 +65,7 @@ class Layout extends React.Component {
   }
   
   render() {
-    const { children } = this.props;
+    const { children, social } = this.props;
 
     return (
       <div
@@ -86,13 +95,40 @@ class Layout extends React.Component {
             {this.renderHeader()}
             <ThemeToggler>
               {({ theme, toggleTheme }) => (
-                <label>
-                  <input
-                    type="checkbox"
-                    onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                <label              
+                  style={{
+                    alignSelf: `flex-start`,
+                    marginTop: `.4em`
+                  }}
+                >
+                  <Switch 
+                    onChange={checked => toggleTheme(checked ? 'dark' : 'light')}
                     checked={theme === 'dark'}
-                  />{' '}
-                  Dark mode
+                    offColor={`#222`}
+                    onColor={`#ce9f31`}
+                    handleDiameter={25.3}
+                    uncheckedIcon={
+                      <FaRegSun
+                        style={{
+                          fontSize: `1.2em`,
+                          color: `white`,
+                          margin: `.225em .35em .225em .225em`
+                        }}
+                      />
+                    }
+                    checkedIcon={
+                      <FaRegMoon 
+                        style={{
+                          fontSize: `1.2em`,
+                          color: `white`,
+                          margin: `.225em .225em .225em .35em`
+                        }}
+                      />
+                    }
+                    activeBoxShadow={`0 0 2px 2px #ce9f31`}
+                    id={`ng-switch-checkbox`}
+                    aria-label="Switch between Dark and Light mode"
+                  />        
                 </label>
               )}
             </ThemeToggler>
@@ -108,7 +144,7 @@ class Layout extends React.Component {
                   height: '24px', 
                   display: 'block' 
                 }}
-                href="https://mobile.twitter.com/mhSangar"
+                href={`${social.twitter}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -131,7 +167,7 @@ class Layout extends React.Component {
                   height: '24px', 
                   display: 'block' 
                 }}
-                href="https://github.com/mhSangar"
+                href={`${social.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -153,7 +189,7 @@ class Layout extends React.Component {
                   height: '24px', 
                   display: 'block' 
                 }}
-                href="https://dev.to/mhSangar"
+                href={`${social.dev}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

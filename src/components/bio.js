@@ -66,19 +66,19 @@ const Bio = () => {
         <span>
           Follow me on{` `}
           
-          <a target="_blank" rel="noopener noreferrer" href={`https://twitter.com/${social.twitter}`}>
+          <a target="_blank" rel="noopener noreferrer" href={`${social.twitter}`}>
             Twitter
           </a> 
 
           ,{` `} 
 
-          <a target="_blank" rel="noopener noreferrer" href={`https://github.com/${social.github}`}>
+          <a target="_blank" rel="noopener noreferrer" href={`${social.github}`}>
             GitHub
           </a> 
           
           {` `}and{` `} 
 
-          <a target="_blank" rel="noopener noreferrer" href={`https://dev.to/${social.dev}`}>
+          <a target="_blank" rel="noopener noreferrer" href={`${social.dev}`}>
             DEV
           </a> 
           !
