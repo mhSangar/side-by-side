@@ -80,6 +80,7 @@ class Layout extends React.Component {
               rel="noopener noreferrer"
             >
               <img
+                alt="Twitter Logo"
                 src={twitterLogo}
                 width="24"
                 height="24"
@@ -99,6 +100,7 @@ class Layout extends React.Component {
               rel="noopener noreferrer"
             >
               <img
+                alt="Github Logo"
                 src={githubLogo}
                 width="24"
                 height="24"
@@ -118,6 +120,7 @@ class Layout extends React.Component {
               rel="noopener noreferrer"
             >
               <img
+                alt="DEV Logo"
                 src={devLogo}
                 width="24"
                 height="24"
