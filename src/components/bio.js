@@ -58,7 +58,7 @@ const Bio = () => {
       <p>
         Personal blog by <strong>{author}</strong>
         <br></br>
-        I'm a developer who loves to {` `}
+        A developer who loves to {` `}
         <span style={{ fontStyle: 'italic' }}>waste</span> {` `}
         his time. Exactly, I should be doing anything 
         else but this blog right now. Sorry, future me.
