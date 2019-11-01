@@ -2,6 +2,8 @@
 title: Hello BlogWorld 🚀
 date: "2019-10-29T01:40:03.284Z"
 description: "Say hello to your new blogger!"
+available: true
+draft: false
 ---
 
 Brand new blog, brand new post... Brand new **me**? Not really. 
