@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 import { rhythm, scale } from "../utils/typography"
 import twitterLogo from "../assets/color-theme/twitter-logo.png"
@@ -7,16 +8,16 @@ import githubLogo from "../assets/color-theme/github-logo.png"
 import devLogo from "../assets/color-theme/dev-logo.png"
 
 class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+
+  renderHeader() {
+    const { location, title } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
 
     if (location.pathname === rootPath) {
-      header = (
+      return (
         <h1
           style={{
-            ...scale(1.3),
+            ...scale(0.9),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
@@ -25,7 +26,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: `var(--textTitle)`,
             }}
             to={`/`}
           >
@@ -34,7 +35,7 @@ class Layout extends React.Component {
         </h1>
       )
     } else {
-      header = (
+      return (
         <h3
           style={{
             fontFamily: `Montserrat, sans-serif`,
@@ -45,7 +46,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `inherit`,
+              color: `var(--textTitle)`,
             }}
             to={`/`}
           >
@@ -54,6 +55,11 @@ class Layout extends React.Component {
         </h3>
       )
     }
+  }
+  
+  render() {
+    const { children } = this.props;
+
     return (
       <div
         style={{
@@ -63,7 +69,28 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '2.625rem',
+          }}
+        >
+          {this.renderHeader()}
+          <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <label>
+                <input
+                  type="checkbox"
+                  onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                  checked={theme === 'dark'}
+                />{' '}
+                Dark mode
+              </label>
+            )}
+          </ThemeToggler>
+        </header>
         <main>{children}</main>
         <footer>
           Side by Side © {new Date().getFullYear()}
