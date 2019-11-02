@@ -32,7 +32,15 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            Side
+            <span
+              style={{
+                color: `var(--mustard)`
+              }}
+            >
+              {` `} by {` `}
+            </span>
+            Side
           </Link>
         </h1>
       )
@@ -58,7 +66,15 @@ class Layout extends React.Component {
                 fontSize: `.7em`,
               }}
             />
-            {` `} {title} 
+            {` `} Side
+            <span
+              style={{
+                color: `var(--mustard)`
+              }}
+            >
+              {` `} by {` `}
+            </span>
+            Side 
           </Link>
         </h3>
       )

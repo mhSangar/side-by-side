@@ -18,7 +18,7 @@ body.dark {
 
     --bg: var(--dark);
     --textNormal: rgba(255, 255, 255, 80%);
-    --textTitle: white;
+    --textTitle: var(--light);
     --textLink: var(--mustard);
     --hr: rgba(0, 0%, 100%, 20%);
 }
