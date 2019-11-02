@@ -65,7 +65,8 @@ class Layout extends React.Component {
   }
   
   render() {
-    const { children, social } = this.props;
+    const { children, social, location } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
 
     return (
       <div
@@ -98,7 +99,7 @@ class Layout extends React.Component {
                 <label              
                   style={{
                     alignSelf: `flex-start`,
-                    marginTop: `.4em`
+                    marginTop: location.pathname === rootPath ? `.4em` : `0`
                   }}
                 >
                   <Switch 

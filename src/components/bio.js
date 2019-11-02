@@ -60,8 +60,7 @@ const Bio = () => {
         <br></br>
         A developer who loves to {` `}
         <span style={{ fontStyle: 'italic' }}>waste</span> {` `}
-        his time. Exactly, I should be doing anything 
-        else but this blog right now. Sorry, future me.
+        his time... Sorry, future me.
         <br></br>
         <span>
           Follow me on{` `}
