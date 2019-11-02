@@ -38,7 +38,7 @@ function SEO({ description, lang, meta, title }) {
           title,
         }
         : {
-          title: `${site.siteMetadata.title} — A blog by Mario Sánchez García`,
+          title: `${site.siteMetadata.title} — A blog by ${site.siteMetadata.author}`,
         }
       )}
       meta={[
