@@ -1,8 +1,8 @@
 body {
     --orange: #df8a49;
     --mustard: #ce9f31;
-    --light: rgb(251, 251, 253);
-    --dark: rgba(40,44,53, 1);
+    --light: #fbfbfd;
+    --dark: #373d49;
     background-color: var(--bg);
 }
   
