@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import { Link } from "gatsby"
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { FaTwitter, FaGithub, FaDev, FaRegSun, FaRegMoon } from 'react-icons/fa';
@@ -102,6 +103,14 @@ class Layout extends React.Component {
                     marginTop: location.pathname === rootPath ? `.4em` : `0`
                   }}
                 >
+                  <Helmet
+                    meta={[
+                      {
+                        name: 'theme-color',
+                        content: theme === 'light' ? 'var(--mustard)' : 'var(--dark)',
+                      },
+                    ]}
+                  />
                   <Switch 
                     onChange={checked => toggleTheme(checked ? 'dark' : 'light')}
                     checked={theme === 'dark'}

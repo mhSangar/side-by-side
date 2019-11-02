@@ -1,11 +1,13 @@
 body {
     --orange: #df8a49;
-    --mustard: rgb(206, 159, 49);
+    --mustard: #ce9f31;
+    --light: rgb(251, 251, 253);
+    --dark: rgba(40,44,53, 1);
     background-color: var(--bg);
 }
   
 body.light {
-    --bg: rgb(251, 251, 253);
+    --bg: var(--light);
     --textNormal: #222;
     --textTitle: #222;
     --textLink: var(--orange);
@@ -15,7 +17,7 @@ body.light {
 body.dark {
     -webkit-font-smoothing: antialiased;
 
-    --bg: rgba(40,44,53, 1);
+    --bg: var(--dark);
     --textNormal: rgba(255, 255, 255, 80%);
     --textTitle: white;
     --textLink: var(--mustard);
