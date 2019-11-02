@@ -1,5 +1,4 @@
 body {
-    --orange: #df8a49;
     --mustard: #ce9f31;
     --light: #fbfbfd;
     --dark: #373d49;
@@ -7,10 +6,10 @@ body {
 }
   
 body.light {
-    --bg: var(--light);
+    --bg: white;
     --textNormal: #222;
     --textTitle: #222;
-    --textLink: var(--orange);
+    --textLink: var(--mustard);
     --hr: rgba(0, 0%, 0%, 20%);
 }
 
