@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { TiArrowRightOutline, TiArrowLeftOutline } from 'react-icons/ti';
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -65,14 +66,14 @@ class BlogPostTemplate extends React.Component {
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+                  <TiArrowLeftOutline /> {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
                 <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                  {next.frontmatter.title} <TiArrowRightOutline />
                 </Link>
               )}
             </li>

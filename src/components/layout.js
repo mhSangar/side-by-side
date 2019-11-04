@@ -180,7 +180,7 @@ class Layout extends React.Component {
                     margin: '0',
                     height: '24px',
                     width: '24px',
-                    // color: 'var(--textNormal)'
+                    color: 'var(--textNormal)'
                   }}
                   alt="Twitter Logo"
                 />
@@ -203,7 +203,7 @@ class Layout extends React.Component {
                     margin: '0',
                     height: '24px',
                     width: '24px',
-                    // color: 'var(--textNormal)'
+                    color: 'var(--textNormal)'
                   }}
                   alt="Twitter Logo"
                 />
@@ -225,7 +225,7 @@ class Layout extends React.Component {
                     margin: '0',
                     height: '24px',
                     width: '24px',
-                    // color: 'var(--textNormal)'
+                    color: 'var(--textNormal)'
                   }}
                   alt="Twitter Logo"
                 />
