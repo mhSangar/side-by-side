@@ -12,9 +12,9 @@ import { rhythm, scale } from "../utils/typography"
 class Layout extends React.Component {
 
   renderHeader() {
-    const { location, title } = this.props;
+    const { location } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
-    
+
     if (location.pathname === rootPath) {
       return (
         <h1
@@ -60,7 +60,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            <TiChevronLeftOutline 
+            <TiChevronLeftOutline
               style={{
                 color: `var(--mustard)`,
                 fontSize: `.7em`,
@@ -74,13 +74,13 @@ class Layout extends React.Component {
             >
               {` `} by {` `}
             </span>
-            Side 
+            Side
           </Link>
         </h3>
       )
     }
   }
-  
+
   render() {
     const { children, social, location } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
@@ -113,7 +113,7 @@ class Layout extends React.Component {
             {this.renderHeader()}
             <ThemeToggler>
               {({ theme, toggleTheme }) => (
-                <label              
+                <label
                   style={{
                     alignSelf: `flex-start`,
                     marginTop: location.pathname === rootPath ? `.4em` : `0`
@@ -127,7 +127,7 @@ class Layout extends React.Component {
                       },
                     ]}
                   />
-                  <Switch 
+                  <Switch
                     onChange={checked => toggleTheme(checked ? 'dark' : 'light')}
                     checked={theme === 'dark'}
                     offColor={`#222`}
@@ -143,7 +143,7 @@ class Layout extends React.Component {
                       />
                     }
                     checkedIcon={
-                      <FaRegMoon 
+                      <FaRegMoon
                         style={{
                           fontSize: `1.2em`,
                           color: `white`,
@@ -154,7 +154,7 @@ class Layout extends React.Component {
                     activeBoxShadow={`0 0 2px 2px #ce9f31`}
                     id={`ng-switch-checkbox`}
                     aria-label="Switch between Dark and Light mode"
-                  />        
+                  />
                 </label>
               )}
             </ThemeToggler>
@@ -164,19 +164,19 @@ class Layout extends React.Component {
             Side by Side © {new Date().getFullYear()}
             <div style={{ float: 'right', display: 'flex', flexDirection: 'row' }}>
               <a
-                style={{ 
-                  boxShadow: 'none', 
-                  marginRight: '.5rem', 
-                  height: '24px', 
-                  display: 'block' 
+                style={{
+                  boxShadow: 'none',
+                  marginRight: '.5rem',
+                  height: '24px',
+                  display: 'block'
                 }}
                 href={`${social.twitter}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaTwitter
-                  style={{ 
-                    pointerEvents: 'none', 
+                  style={{
+                    pointerEvents: 'none',
                     margin: '0',
                     height: '24px',
                     width: '24px',
@@ -184,22 +184,22 @@ class Layout extends React.Component {
                   }}
                   alt="Twitter Logo"
                 />
-                
+
               </a>
               <a
-                style={{ 
-                  boxShadow: 'none', 
-                  marginRight: '.5rem', 
-                  height: '24px', 
-                  display: 'block' 
+                style={{
+                  boxShadow: 'none',
+                  marginRight: '.5rem',
+                  height: '24px',
+                  display: 'block'
                 }}
                 href={`${social.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaGithub
-                  style={{ 
-                    pointerEvents: 'none', 
+                  style={{
+                    pointerEvents: 'none',
                     margin: '0',
                     height: '24px',
                     width: '24px',
@@ -209,19 +209,19 @@ class Layout extends React.Component {
                 />
               </a>
               <a
-                style={{ 
-                  boxShadow: 'none', 
-                  // marginRight: '.5rem', 
-                  height: '24px', 
-                  display: 'block' 
+                style={{
+                  boxShadow: 'none',
+                  // marginRight: '.5rem',
+                  height: '24px',
+                  display: 'block'
                 }}
                 href={`${social.dev}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaDev
-                  style={{ 
-                    pointerEvents: 'none', 
+                  style={{
+                    pointerEvents: 'none',
                     margin: '0',
                     height: '24px',
                     width: '24px',
