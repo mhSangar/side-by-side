@@ -1,0 +1,265 @@
+/*
+    Unified themes using CSS global variables by Mario Sánchez García
+    Website: https://side-by-side.netlify.com
+    Twitter: https://twitter.com/mhsangar
+    GitHub:  https://github.com/mhsangar
+*/
+
+/*
+    Solarized Light
+    Color Schemes originally by Ethan Schoonover (http://ethanschoonover.com/solarized)
+    Then ported for PrismJS by Hector Matos (https://krakendev.io, https://twitter.com/allonsykraken)
+
+    --codeHighBase00:            #657b83;
+    --codeHighBase01:            #073642;
+    --codeHighBase02:            #fdf6e3;
+
+    --codeHighTokenBase00:       #93a1a1;
+    --codeHighTokenPunctuation:  #586e75;
+    --codeHighTokenTag:          #268bd2;
+    --codeHighTokenDeleted:      #268bd2;
+    --codeHighTokenNamespace:    inherit;
+    --codeHighTokenProperty:     #268bd2;
+    --codeHighTokenBoolean:      #268bd2;
+    --codeHighTokenNumber:       #268bd2;
+    --codeHighTokenConstant:     #268bd2;
+    --codeHighTokenSymbol:       #268bd2;
+    --codeHighTokenSelector:     #2aa198;
+    --codeHighTokenOperator:     inherit;
+    --codeHighTokenAttrName:     #2aa198;
+    --codeHighTokenAttrValue:    #859900;
+    --codeHighTokenString:       #2aa198;
+    --codeHighTokenChar:         #2aa198;
+    --codeHighTokenBuiltin:      #2aa198;
+    --codeHighTokenUrl:          #2aa198;
+    --codeHighTokenInserted:     #2aa198;
+    --codeHighTokenEntity:       #657b83;
+    --codeHighTokenAtrule:       #859900;
+    --codeHighTokenKeyword:      #859900;
+    --codeHighTokenClassName:    inherit;
+    --codeHighTokenFunction:     #b58900;
+    --codeHighTokenFunctionName: inherit;
+    --codeHighTokenRegex:        #cb4b16;
+    --codeHighTokenVariable:     #cb4b16;
+    --codeHighTokenImportant:    #cb4b16;
+*/
+
+/*
+    Tomorrow
+    Based on https://github.com/chriskempson/tomorrow-theme
+    Ported for PrismJS (for JavaScript, CoffeeScript, CSS and HTML) by Rose Pritchard
+
+    --codeHighBase00:            #cccccc;
+    --codeHighBase01:            #cccccc;
+    --codeHighBase02:            #2d2d2d;
+
+    --codeHighTokenBase00:       #999999;
+    --codeHighTokenPunctuation:  #cccccc;
+    --codeHighTokenTag:          #e2777a;
+    --codeHighTokenDeleted:      #e2777a;
+    --codeHighTokenNamespace:    #e2777a;
+    --codeHighTokenProperty:     #f8c555;
+    --codeHighTokenBoolean:      #f08d49;
+    --codeHighTokenNumber:       #f08d49;
+    --codeHighTokenConstant:     #f8c555;
+    --codeHighTokenSymbol:       #f8c555;
+    --codeHighTokenSelector:     #cc99cd;
+    --codeHighTokenOperator:     #67cdcc;
+    --codeHighTokenAttrName:     #e2777a;
+    --codeHighTokenAttrValue:    #7ec699;
+    --codeHighTokenString:       #7ec699;
+    --codeHighTokenChar:         #7ec699;
+    --codeHighTokenBuiltin:      #cc99cd;
+    --codeHighTokenUrl:          #67cdcc;
+    --codeHighTokenInserted:     inherit;
+    --codeHighTokenEntity:       #67cdcc;
+    --codeHighTokenAtrule:       #cc99cd;
+    --codeHighTokenKeyword:      #cc99cd;
+    --codeHighTokenClassName:    #f8c555;
+    --codeHighTokenFunction:     #f08d49;
+    --codeHighTokenFunctionName: #6196cc;
+    --codeHighTokenRegex:        #7ec699;
+    --codeHighTokenVariable:     #7ec699;
+    --codeHighTokenImportant:    #cc99cd;
+*/
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: var(--codeHighBase00);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    background: var(--codeHighBase01);
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    background: var(--codeHighBase01);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: .3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background-color: var(--codeHighBase02);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .55em .4em .6em .4em;
+    margin: .2em;
+	border-radius: .15em;
+}
+
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata { /* codeHighTokenBase00 */
+	color: var(--codeHighTokenBase00);
+}
+
+.token.punctuation { /* codeHighTokenPunctuation */
+	color: var(--codeHighTokenPunctuation);
+}
+
+.token.tag { /* codeHighTokenTag */
+    color: var(--codeHighTokenTag);
+}
+
+.token.deleted { /* codeHighTokenDeleted */
+    color: var(--codeHighTokenDeleted);
+}
+
+.token.namespace { /* codeHighTokenNamespace */
+    color: var(--codeHighTokenNamespace);
+	opacity: .7;
+}
+
+.token.property { /* codeHighTokenProperty */
+    color: var(--codeHighTokenProperty);
+}
+
+.token.boolean { /* codeHighTokenBoolean */
+    color: var(--codeHighTokenBoolean);
+}
+
+.token.number { /* codeHighTokenNumber */
+    color: var(--codeHighTokenNumber);
+}
+
+.token.constant { /* codeHighTokenConstant */
+    color: var(--codeHighTokenConstant);
+}
+
+.token.symbol { /* codeHighTokenSymbol */
+	color: var(--codeHighTokenSymbol);
+}
+
+.token.selector { /* codeHighTokenSelector */
+    color: var(--codeHighTokenSelector)
+}
+
+.token.operator { /* codeHighTokenOperator */
+    color: var(--codeHighTokenOperator)
+}
+
+.token.attr-name { /* codeHighTokenAttrName */
+    color: var(--codeHighTokenAttrName)
+}
+
+.token.attr-value { /* codeHighTokenAttrValue */
+    color: var(--codeHighTokenAttrValue);
+}
+
+.token.string { /* codeHighTokenString */
+    color: var(--codeHighTokenString)
+}
+
+.token.char { /* codeHighTokenChar */
+    color: var(--codeHighTokenChar)
+}
+
+.token.builtin { /* codeHighTokenBuiltin */
+    color: var(--codeHighTokenBuiltin)
+}
+
+.token.url { /* codeHighTokenUrl */
+    color: var(--codeHighTokenUrl)
+}
+
+.token.inserted { /* codeHighTokenInserted */
+	color: var(--codeHighTokenInserted);
+}
+
+.token.entity { /* codeHighTokenEntity */
+	color: var(--codeHighTokenEntity);
+    /* background: var(--codeHighBase2); */
+	cursor: help;
+}
+
+.token.atrule { /* codeHighTokenAtrule */
+    color: var(--codeHighTokenAtrule);
+}
+
+.token.keyword { /* codeHighTokenKeyword */
+	color: var(--codeHighTokenKeyword);
+}
+
+.token.class-name { /* codeHighTokenClassName */
+	color: var(--codeHighTokenClassName);
+}
+
+.token.function { /* codeHighTokenFunction */
+	color: var(--codeHighTokenFunction);
+}
+
+.token.function-name { /* codeHighTokenFunctionName */
+	color: var(--codeHighTokenFunctionName);
+}
+
+.token.regex { /* codeHighTokenRegex */
+    color: var(--codeHighTokenRegex);
+}
+
+.token.variable { /* codeHighTokenVariable */
+	color: var(--codeHighTokenVariable);
+}
+
+.token.important { /* codeHighTokenImportant */
+    color: var(--codeHighTokenImportant);
+	font-weight: bold;
+}
+
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
