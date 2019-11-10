@@ -8,10 +8,10 @@ ENV CHOKIDAR_USEPOLLING=1
 
 WORKDIR /app
 
-RUN npm install -g gatsby-cli gatsby yarn --unsafe-perm 
-
 COPY ./package*.json ./
-RUN yarn install && yarn cache clean
+
+RUN npm install -g gatsby-cli gatsby yarn --unsafe-perm && \
+    yarn install && yarn cache clean
 
 COPY . .
 

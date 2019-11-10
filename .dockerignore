@@ -1,2 +1,7 @@
 ./node_modules/
 .cache/
+.git
+.gitignore
+.dockerignore
+docker-compose*
+Dockerfile*
