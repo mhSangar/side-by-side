@@ -130,8 +130,8 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-    padding: .55em .4em .6em .4em;
-    margin: .2em;
+    padding: .45em .4em .45em .4em;
+    margin: 0 .2em;
 	border-radius: .15em;
 }
 

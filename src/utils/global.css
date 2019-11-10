@@ -107,8 +107,8 @@ body.dark {
 
 .gatsby-highlight {
     margin-bottom: 1.75rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    margin-left: -1.2rem;
+    margin-right: -1.2rem;
     -webkit-overflow-scrolling: touch;
     overflow: auto;
     max-height: 50em;
@@ -116,7 +116,7 @@ body.dark {
 
 .gatsby-highlight pre[class*='language-'] {
     float: left;
-    min-width: 100%;
+    width: 100%;
 }
 
 .gatsby-highlight pre[class*='language-'] span[class='line-numbers-rows']{
@@ -137,6 +137,10 @@ body.dark {
 blockquote {
     color: var(--blockquote);
     border-left-color: var(--blockquoteLeft);
+}
+
+ul, ol {
+    margin-left: 1.75rem;
 }
 
 .command-line-prompt > span:before {

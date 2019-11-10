@@ -15,8 +15,6 @@ RUN npm install -g gatsby-cli gatsby yarn --unsafe-perm && \
 
 COPY . .
 
-EXPOSE 8000
-EXPOSE 9929
-EXPOSE 9230
+EXPOSE 8000 9929 9230
 
 CMD ["yarn", "develop", "-H", "0.0.0.0" ]
