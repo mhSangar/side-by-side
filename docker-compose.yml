@@ -6,10 +6,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-      - "9929:9929"
-      - "9230:9230"
     volumes:
+      # node_modules volume
       - side-by-side-modules:/app/node_modules
+      # bind mount of host's blog directory
       - .:/app
     environment:
       - NPM_CONFIG_LOGLEVEL=warn
