@@ -5,11 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+// import { foo } from "../../content/data/foo.yaml"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -55,6 +57,7 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
+      {/* <p>{ foo.bar }</p> */}
       <p>
         Personal blog by <strong>{author}</strong>
         <br></br>
@@ -64,25 +67,25 @@ const Bio = () => {
         <br></br>
         <span>
           Follow me on{` `}
-          
+
           <a target="_blank" rel="noopener noreferrer" href={`${social.twitter}`}>
             Twitter
-          </a> 
+          </a>
 
-          ,{` `} 
+          ,{` `}
 
           <a target="_blank" rel="noopener noreferrer" href={`${social.github}`}>
             GitHub
-          </a> 
-          
-          {` `}and{` `} 
+          </a>
+
+          {` `}and{` `}
 
           <a target="_blank" rel="noopener noreferrer" href={`${social.dev}`}>
             DEV
-          </a> 
+          </a>
           !
         </span>
-        
+
       </p>
     </div>
   )
