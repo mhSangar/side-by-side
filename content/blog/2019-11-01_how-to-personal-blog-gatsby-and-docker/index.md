@@ -1,7 +1,7 @@
 ---
 title: Build your own blog and make it portable with Docker
 date: "2019-11-10T12:00:00.666Z"
-description: "Let me show you how I ended up with my personal blog. Using Gatsby and Netlify to build it and then Docker to be able to easily move it to another machine."
+description: "Let me show you how I ended up with my personal blog, with a taste of Gatsby and Docker."
 available: true
 draft: true
 ---
@@ -10,7 +10,7 @@ Have you ever thought about having your own blog? I have thought about writing l
 
 However, the number of posts I have written on these platforms goes up to... Zero 😅 I never had the *need* to write. With a personal blog, that changes. Who's going to write in there if it's not you?
 
-Last weekend I saw [this awesome tutorial of Dave Ceddia][1] and I gave it a try. As he promised, I ended up with a very decent blog in less than **10 minutes**. Even better than that, it was not (just) on my *localhost:whatever*; it was deployed on a publicly accessible URL **for free**. The tutorial uses *Gatsby*, of which I heard a lot about recently but I haven't had the opportunity to check, and *Netlify*, a place where you can deploy your site in a matter of seconds.
+Last weekend I saw [this awesome tutorial of Dave Ceddia][1] and I gave it a try. As he promised, I ended up with a very decent blog in less than **10 minutes**. Even better than that, it was not (just) on my *localhost:whatever*; it was deployed on a publicly accessible URL **for free**. The tutorial uses *Gatsby*, of which I heard a lot about recently but I haven't had the opportunity to check, and *Netlify*, where you can deploy your site in a matter of seconds.
 
 I was amazed that everything went so smooth and when I realized, I had a blog 👏🏻 An empty blog, though. It was time to write my very first post!
 
@@ -18,9 +18,9 @@ I was amazed that everything went so smooth and when I realized, I had a blog �
 
 ## Adding Docker to the mix
 
-In my first attempt, I installed *Gatsby* locally following the tutorial, but having that package on my npm list was bugging me. I prefer not to mess my local installation with more and more packages so, I finally decided to move it to a container. This way, it gives me the opportunity to migrate the project to another machine (for me, the PC tower of my room) and set everything up fast and easy. Besides, I spent much less time on this than I expected... I had to make it a bit more difficult 🙄
+In my first attempt, I installed *Gatsby* locally following the tutorial, but having that package on my npm list was bugging me. I prefer not to mess my local installation with more and more packages so, I finally decided to move it to a container. This way, it allows me to migrate the project to another machine (for me, the PC tower of my room) and set everything up fast and easy. Besides, I spent much less time on this than I expected... I had to make it a bit more difficult 🙄
 
-I must say that I'm not an expert of Docker (to be honest I'm very newbie 😅), so comment below anything that seems wrong to you! Follow the steps below or just [go directly to the result][1]. I recommend the long way, though.
+I must say that I'm not a Docker expert (to be honest, I'm very newbie 😅), so let me know if anything seems wrong for you! Follow the steps below or just [go directly to the result](#launch-your-app-locally). I recommend the long way, though.
 
 ## Installing Docker and Docker Compose
 
@@ -99,7 +99,7 @@ EXPOSE 8000
 CMD ["yarn", "develop", "-H", "0.0.0.0" ]
 ```
 
-The whole Dockerfile would be as follows.
+The whole Dockerfile (`Dockerfile`) would be as follows.
 
 ```docker
 FROM node:12.13.0
@@ -125,9 +125,9 @@ CMD ["yarn", "develop", "-H", "0.0.0.0" ]
 
 ## Compose it up!
 
-One can launch a container from a Dockerfile directly on the command line, using `docker build` to create the image and then `docker run` to launch the container. However, these commands usually need many arguments, such as the build tag, the port forwarding or the volume mounts. Writing them easily becomes boring after the second or the third time... And you hate it shortly after 😤
+One can launch a container from a Dockerfile directly on the command line, using `docker build` to create the image and then `docker run` to launch the container. However, these commands usually need many arguments, such as the build tag, the port forwarding, or the volume mounts. Writing them easily becomes boring after the second or the third time... And you hate it shortly after 😤
 
-You can avoid this by using Docker Compose. Basically, it's a YAML file where you define the configuration of your container. It's very useful if your app is *composed* by different containers that need to be launched in order, each of them with a specific configuration. In our case, we're going to use it just because we're lazy 😅
+You can avoid this by using Docker Compose. Basically, it's a YAML file where you define the configuration of your container. It's very useful if your app is *composed* of different containers that need to be launched in order, each of them with a specific configuration. In our case, we're going to use it just because we're lazy 😅
 
 Docker Compose files start defining the version it's going to use. Some statements in the file may differ between versions, so you must indicate the version it uses explicitly.
 
@@ -135,7 +135,7 @@ Docker Compose files start defining the version it's going to use. Some statemen
 version: '3'
 ```
 
-After **version** tag, it comes **services**, where you define the configuration for each container. Our only container will be `blog` and will use the Dockerfile on the same directory to *build* the image.
+After the **version** tag, it comes **services**, where you define the configuration for each container. Our only container will be `blog` and will use the Dockerfile on the same directory to *build* the image.
 
 ```yaml
 services:
@@ -155,7 +155,7 @@ services:
       - "8000:8000"
 ```
 
-Finally, we need to set up the [volumes][5] our app is going to use. Volumes are the way Docker persist the data. They don't increase the size of the container and exist outside the life cycle of the containers, what makes them a perfect choice to store our *node_modules* directory. Docker names the volume with a hash, what makes it unique... But also pretty difficult to identify for us, humans. Name it accordingly with a separate tag **volumes** at the end of the file.
+Finally, we need to set up the [volumes][5] our app is going to use. Volumes are the way Docker persists the data. They don't increase the size of the container and exist outside the life cycle of the containers, which makes them a perfect choice to store our *node_modules* directory. Docker names the volume with a hash, making it unique... But also pretty difficult to identify for us, humans 🤖. Name it accordingly with a separate tag **volumes** at the end of the file.
 
 On the other hand, to be able to take the advantage of the *Hot Module Reloading* (HMR) feature of Gatsby, we can mount our host directory of the blog to the container. This way, when we change a file in our local machine, changes are reflected in the container side and Gatsby reloads the website using HMR.
 
@@ -174,7 +174,7 @@ volumes:
   side-by-side-modules:
 ```
 
-The whole Docker Compose file would be as follows.
+The whole Docker Compose file (`docker-compose.yml`) would be as follows.
 
 ```yaml
 version: '3'
@@ -194,22 +194,30 @@ volumes:
   side-by-side-modules:
 ```
 
-## Conclusions
+## Launch your app locally
+
+After following the [tutorial of Dave Ceddia][1] along with mine, we should have a Gatsby project with a _Dockerfile_ and a _docker-compose.yml_, both located at the root of the project. We just need to launch the container with `docker-compose`, and then open http://localhost:8000 in our browser to see our app running.
+
+```bash{outputLines: 1-1, 3-4}{promptUser: mhsangar}{promptHost: pop-os}
+# starts the container
+docker-compose up
+
+# stops the container
+docker-compose down
+```
+
+## Conclusion
+
+As you can see...
 
 
 ## Por hacer
 
 - Conclusiones. Decir que para escribir esto he tenido que acudir a los docs buscar información al respecto, con lo que he aprendido más sobre el tema. Perks of writing. Tema del blog en general.
-- Icono de robot en "humans"
-- Cambiar el link de ir al resultado
 - Conexion y explicar blog en intro.
-- "No soy un experto en el tema".
 - Preguntas de qué te ha parecido, qué hay que mejorar, qué opinas sobre la tecnología.
 
 ## Dudas
-
-- Se puede redirigir a la propia página? En plan, a un título/sección?
-- Es necesario redefinir las variables de entorno en el compose? Cuál es la buena práctica? En el Dockerfile, en el compose o en los dos.
 
 
 [1]: https://daveceddia.com/start-blog-gatsby-netlify/

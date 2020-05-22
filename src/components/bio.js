@@ -62,9 +62,9 @@ const Bio = () => {
       <p>
         Personal blog by <strong>{author}</strong>
         <br></br>
-        A developer who loves to {` `}
-        <span style={{ fontStyle: 'italic' }}>waste</span> {` `}
-        his time... Sorry, future me.
+        Masters degree in Computer Science & Engineering Student at UC3M. 
+        <br></br>
+        <i>Always improving </i>💭
         <br></br>
         <span>
           Follow me on{` `}
