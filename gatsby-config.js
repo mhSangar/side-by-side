@@ -5,6 +5,7 @@ module.exports = {
     description: `A blog started at 3am on a weekday. What could go wrong?`,
     siteUrl: `https://nifty-allen-9641e5.netlify.com/`,
     social: {
+      purestake: `https://www.purestake.com`,
       twitter: `https://twitter.com/mhsangar`,
       github: `https://github.com/mhsangar`,
       dev: `https://dev.to/mhsangar`

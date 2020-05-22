@@ -18,7 +18,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 80, height: 80) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -27,6 +27,7 @@ const Bio = () => {
         siteMetadata {
           author
           social {
+            purestake
             twitter
             github
             dev
@@ -41,6 +42,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
+        alignItems: `center`,
         marginBottom: 0,
         marginTop: rhythm(2),
       }}
@@ -51,7 +53,8 @@ const Bio = () => {
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          minWidth: 50,
+          minWidth: 80,
+          minHeight: 80,
           borderRadius: `100%`,
         }}
         imgStyle={{
@@ -59,13 +62,24 @@ const Bio = () => {
         }}
       />
       {/* <p>{ foo.bar }</p> */}
-      <p>
+      <p 
+        style={{
+          margin: 0,
+        }}
+      >
         Personal blog by <strong>{author}</strong>
-        <br></br>
-        Masters degree in Computer Science & Engineering Student at UC3M. 
-        <br></br>
-        <i>Always improving </i>💭
-        <br></br>
+        <br />
+        <span style={{
+          fontSize: `0.9em`,
+          fontStyle: `italic`
+        }}>
+          Masters degree in Computer Science and DevOps engineer at{` `}
+          <a target="_blank" rel="noopener noreferrer" href={`${social.purestake}`}>
+            @PureStake
+          </a>.{` `}
+          Join me discovering new technologies and learning about random stuff.
+          <br />
+        </span>
         <span>
           Follow me on{` `}
 

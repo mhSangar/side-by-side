@@ -110,6 +110,7 @@ class Layout extends React.Component {
               paddingTop: `2rem`,
               paddingBottom: `0.2rem`,
               zIndex: `1`,
+              transition: "background 0.15s ease-out",
             }}
           >
             <div
@@ -191,12 +192,7 @@ class Layout extends React.Component {
               style={{ float: "right", display: "flex", flexDirection: "row" }}
             >
               <a
-                style={{
-                  boxShadow: "none",
-                  marginRight: ".5rem",
-                  height: "24px",
-                  display: "block",
-                }}
+                class="social-link"
                 href={`${social.twitter}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -213,12 +209,7 @@ class Layout extends React.Component {
                 />
               </a>
               <a
-                style={{
-                  boxShadow: "none",
-                  marginRight: ".5rem",
-                  height: "24px",
-                  display: "block",
-                }}
+                class="social-link"
                 href={`${social.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -235,11 +226,9 @@ class Layout extends React.Component {
                 />
               </a>
               <a
+                class="social-link"
                 style={{
-                  boxShadow: "none",
-                  // marginRight: '.5rem',
-                  height: "24px",
-                  display: "block",
+                  marginRight: 0,
                 }}
                 href={`${social.dev}`}
                 target="_blank"
