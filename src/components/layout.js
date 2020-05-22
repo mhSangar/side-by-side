@@ -1,26 +1,24 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { Link } from "gatsby"
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import { FaTwitter, FaGithub, FaDev, FaRegSun, FaRegMoon } from 'react-icons/fa';
-import { TiChevronLeftOutline } from 'react-icons/ti';
-import Switch from "react-switch";
-
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
+import { FaTwitter, FaGithub, FaDev, FaRegSun, FaRegMoon } from "react-icons/fa"
+import { TiChevronLeftOutline } from "react-icons/ti"
+import Switch from "react-switch"
 
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
-
   renderHeader() {
-    const { location } = this.props;
-    const rootPath = `${__PATH_PREFIX__}/`;
+    const { location } = this.props
+    const rootPath = `${__PATH_PREFIX__}/`
 
     if (location.pathname === rootPath) {
       return (
         <h1
           style={{
             ...scale(0.9),
-            marginBottom: rhythm(1.5),
+            marginBottom: rhythm(0.5),
             marginTop: 0,
           }}
         >
@@ -35,7 +33,7 @@ class Layout extends React.Component {
             Side
             <span
               style={{
-                color: `var(--mustard)`
+                color: `var(--mustard)`,
               }}
             >
               {` `} by {` `}
@@ -50,6 +48,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            marginBottom: `0.5rem`,
           }}
         >
           <Link
@@ -69,7 +68,7 @@ class Layout extends React.Component {
             {` `} Side
             <span
               style={{
-                color: `var(--mustard)`
+                color: `var(--mustard)`,
               }}
             >
               {` `} by {` `}
@@ -82,16 +81,16 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, social, location } = this.props;
-    const rootPath = `${__PATH_PREFIX__}/`;
+    const { children, social, location } = this.props
+    const rootPath = `${__PATH_PREFIX__}/`
 
     return (
       <div
         style={{
-          color: 'var(--textNormal)',
-          background: 'var(--bg)',
-          transition: 'color 0.2s ease-out, background 0.2s ease-out',
-          minHeight: '100vh',
+          color: "var(--textNormal)",
+          background: "var(--bg)",
+          transition: "color 0.2s ease-out, background 0.2s ease-out",
+          minHeight: "100vh",
         }}
       >
         <div
@@ -99,76 +98,104 @@ class Layout extends React.Component {
             marginLeft: `auto`,
             marginRight: `auto`,
             maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            padding: `0 ${rhythm(3 / 4)}`,
           }}
         >
           <header
             style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '2.625rem',
+              background: "var(--bg)",
+              position: "fixed",
+              left: "0",
+              right: "0",
+              paddingTop: `2rem`,
+              paddingBottom: `0.2rem`,
+              zIndex: `1`,
             }}
           >
-            {this.renderHeader()}
-            <ThemeToggler>
-              {({ theme, toggleTheme }) => (
-                <label
-                  style={{
-                    alignSelf: `flex-start`,
-                    marginTop: location.pathname === rootPath ? `.4em` : `0`
-                  }}
-                >
-                  <Helmet
-                    meta={[
-                      {
-                        name: 'theme-color',
-                        content: theme === 'light' ? '#ce9f31' : '#373d49',
-                      },
-                    ]}
-                  />
-                  <Switch
-                    onChange={checked => toggleTheme(checked ? 'dark' : 'light')}
-                    checked={theme === 'dark'}
-                    offColor={`#222`}
-                    onColor={`#ce9f31`}
-                    handleDiameter={25.3}
-                    uncheckedIcon={
-                      <FaRegSun
-                        style={{
-                          fontSize: `1.2em`,
-                          color: `white`,
-                          margin: `.225em .35em .225em .225em`
-                        }}
-                      />
-                    }
-                    checkedIcon={
-                      <FaRegMoon
-                        style={{
-                          fontSize: `1.2em`,
-                          color: `white`,
-                          margin: `.225em .225em .225em .35em`
-                        }}
-                      />
-                    }
-                    activeBoxShadow={`0 0 2px 2px #ce9f31`}
-                    id={`ng-switch-checkbox`}
-                    aria-label="Switch between Dark and Light mode"
-                  />
-                </label>
-              )}
-            </ThemeToggler>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginLeft: `auto`,
+                marginRight: `auto`,
+                maxWidth: rhythm(24),
+                padding: `0 ${rhythm(3 / 4)}`,
+              }}
+            >
+              {this.renderHeader()}
+              <ThemeToggler>
+                {({ theme, toggleTheme }) => (
+                  <label
+                    style={{
+                      alignSelf: `flex-start`,
+                      marginTop: location.pathname === rootPath ? `.4em` : `0`,
+                    }}
+                  >
+                    <Helmet
+                      meta={[
+                        {
+                          name: "theme-color",
+                          content: theme === "light" ? "#ce9f31" : "#373d49",
+                        },
+                      ]}
+                    />
+                    <Switch
+                      onChange={(checked) =>
+                        toggleTheme(checked ? "dark" : "light")
+                      }
+                      checked={theme === "dark"}
+                      offColor={`#222`}
+                      onColor={`#ce9f31`}
+                      handleDiameter={25.3}
+                      uncheckedIcon={
+                        <FaRegSun
+                          style={{
+                            fontSize: `1.2em`,
+                            color: `white`,
+                            margin: `.225em .35em .225em .225em`,
+                          }}
+                        />
+                      }
+                      checkedIcon={
+                        <FaRegMoon
+                          style={{
+                            fontSize: `1.2em`,
+                            color: `white`,
+                            margin: `.225em .225em .225em .35em`,
+                          }}
+                        />
+                      }
+                      activeBoxShadow={`0 0 2px 2px #ce9f31`}
+                      id={`ng-switch-checkbox`}
+                      aria-label="Switch between Dark and Light mode"
+                    />
+                  </label>
+                )}
+              </ThemeToggler>
+            </div>
           </header>
-          <main>{children}</main>
-          <footer>
+          <main
+            style={{
+              paddingTop: `5rem`,
+            }}
+          >{children}</main>
+          <footer
+            style={{
+              marginBottom: '1rem',
+            }}
+          
+          >
             Side by Side © {new Date().getFullYear()}
-            <div style={{ float: 'right', display: 'flex', flexDirection: 'row' }}>
+            <div
+              style={{ float: "right", display: "flex", flexDirection: "row" }}
+            >
               <a
                 style={{
-                  boxShadow: 'none',
-                  marginRight: '.5rem',
-                  height: '24px',
-                  display: 'block'
+                  boxShadow: "none",
+                  marginRight: ".5rem",
+                  height: "24px",
+                  display: "block",
                 }}
                 href={`${social.twitter}`}
                 target="_blank"
@@ -176,22 +203,21 @@ class Layout extends React.Component {
               >
                 <FaTwitter
                   style={{
-                    pointerEvents: 'none',
-                    margin: '0',
-                    height: '24px',
-                    width: '24px',
-                    color: 'var(--textNormal)'
+                    pointerEvents: "none",
+                    margin: "0",
+                    height: "24px",
+                    width: "24px",
+                    color: "var(--textNormal)",
                   }}
                   alt="Twitter Logo"
                 />
-
               </a>
               <a
                 style={{
-                  boxShadow: 'none',
-                  marginRight: '.5rem',
-                  height: '24px',
-                  display: 'block'
+                  boxShadow: "none",
+                  marginRight: ".5rem",
+                  height: "24px",
+                  display: "block",
                 }}
                 href={`${social.github}`}
                 target="_blank"
@@ -199,21 +225,21 @@ class Layout extends React.Component {
               >
                 <FaGithub
                   style={{
-                    pointerEvents: 'none',
-                    margin: '0',
-                    height: '24px',
-                    width: '24px',
-                    color: 'var(--textNormal)'
+                    pointerEvents: "none",
+                    margin: "0",
+                    height: "24px",
+                    width: "24px",
+                    color: "var(--textNormal)",
                   }}
                   alt="Twitter Logo"
                 />
               </a>
               <a
                 style={{
-                  boxShadow: 'none',
+                  boxShadow: "none",
                   // marginRight: '.5rem',
-                  height: '24px',
-                  display: 'block'
+                  height: "24px",
+                  display: "block",
                 }}
                 href={`${social.dev}`}
                 target="_blank"
@@ -221,11 +247,11 @@ class Layout extends React.Component {
               >
                 <FaDev
                   style={{
-                    pointerEvents: 'none',
-                    margin: '0',
-                    height: '24px',
-                    width: '24px',
-                    color: 'var(--textNormal)'
+                    pointerEvents: "none",
+                    margin: "0",
+                    height: "24px",
+                    width: "24px",
+                    color: "var(--textNormal)",
                   }}
                   alt="Twitter Logo"
                 />
