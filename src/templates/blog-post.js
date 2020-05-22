@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { TiArrowRightOutline, TiArrowLeftOutline } from 'react-icons/ti';
+import { TiArrowRightOutline, TiArrowLeftOutline } from "react-icons/ti"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
               style={{
                 marginTop: rhythm(1),
                 marginBottom: 0,
-                color: 'var(--textTitle)',
+                color: "var(--textTitle)",
               }}
             >
               {post.frontmatter.title}
@@ -36,7 +36,7 @@ class BlogPostTemplate extends React.Component {
                 ...scale(-1 / 5),
                 display: `block`,
                 marginBottom: rhythm(1),
-                color: 'var(--textTitle)',
+                color: "var(--textTitle)",
               }}
             >
               {post.frontmatter.date}
