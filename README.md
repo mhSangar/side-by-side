@@ -6,8 +6,8 @@
   </a>
 </h1>
 
-A blog project that started at 3am, what could go wrong? Originally forked from
-[Gatsby's blog starter](https://github.com/gatsbyjs/gatsby-starter-blog).
+A blog project started at 3am, what could go wrong? Originally forked from
+[Gatsby's blog starter](https://github.com/gatsbyjs/gatsby-starter-blog). Visit the [live version](https://side-by-side.netlify.app/)!
 
 ## Launch
 

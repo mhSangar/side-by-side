@@ -12,7 +12,7 @@ However, the number of posts I have written on these platforms goes up to... Zer
 
 Last weekend I saw [this awesome tutorial of Dave Ceddia][1] and I gave it a try. As he promised, I ended up with a very decent blog in less than **10 minutes**. Even better than that, it was not (just) on my *localhost:whatever*; it was deployed on a publicly accessible URL **for free**. The tutorial uses *Gatsby*, of which I heard a lot about recently but I haven't had the opportunity to check, and *Netlify*, where you can deploy your site in a matter of seconds.
 
-I was amazed that everything went so smooth and when I realized, I had a blog 👏🏻 An empty blog, though. It was time to write my very first post!
+I was amazed that everything went so smoothly and when I realized, I had a blog 👏🏻 An empty blog, though. It was time to write my very first post!
 
 *Yes, the one you are currently reading :)*
 
@@ -196,7 +196,7 @@ volumes:
 
 ## Launch your app locally
 
-After following the [tutorial of Dave Ceddia][1] along with mine, we should have a Gatsby project with a _Dockerfile_ and a _docker-compose.yml_, both located at the root of the project. We just need to launch the container with `docker-compose`, and then open http://localhost:8000 in our browser to see our app running.
+After following the [tutorial of Dave Ceddia][1] along with mine, we should have a Gatsby project with a _Dockerfile_ and a _docker-compose.yml_, both located at the root of the project. We just need to launch the container with `docker-compose`, and then open http://localhost:8000 in our browser to see our app running!
 
 ```bash{outputLines: 1-1, 3-4}{promptUser: mhsangar}{promptHost: pop-os}
 # starts the container
@@ -208,7 +208,7 @@ docker-compose down
 
 ## Conclusion
 
-As you can see...
+
 
 
 ## Por hacer
